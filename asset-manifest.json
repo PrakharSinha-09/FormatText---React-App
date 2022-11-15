@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/FormatText---React-App/static/css/main.2d1b4aca.css",
+    "main.js": "/FormatText---React-App/static/js/main.aa050cc7.js",
+    "static/js/787.28cb0dcd.chunk.js": "/FormatText---React-App/static/js/787.28cb0dcd.chunk.js",
+    "static/media/txtImg.png": "/FormatText---React-App/static/media/txtImg.15a22d7a7c460577ea46.png",
+    "index.html": "/FormatText---React-App/index.html",
+    "main.2d1b4aca.css.map": "/FormatText---React-App/static/css/main.2d1b4aca.css.map",
+    "main.aa050cc7.js.map": "/FormatText---React-App/static/js/main.aa050cc7.js.map",
+    "787.28cb0dcd.chunk.js.map": "/FormatText---React-App/static/js/787.28cb0dcd.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2d1b4aca.css",
+    "static/js/main.aa050cc7.js"
+  ]
+}
