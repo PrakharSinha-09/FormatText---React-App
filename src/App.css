@@ -42,3 +42,31 @@
   /* text-shadow: 2px red; */
   font-style: italic;
 }
+
+.headi{
+  margin-top: 35px;
+}
+
+.txtphoto{
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.img-fluid{
+  height: 15vh;
+  position: absolute;
+    /* top: 484px; */
+    bottom: 126px;
+}
+
+@media screen and (max-width: 580px) {
+  /* .txtphoto {
+      flex-wrap: wrap;
+  } */
+
+  .img-fluid{
+    position: relative;
+    flex-wrap: wrap;
+    height: 10vh;
+   }
+}
