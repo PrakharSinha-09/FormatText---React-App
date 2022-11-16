@@ -35,6 +35,7 @@ export default function TextForm(props) {
     var text=document.getElementById("box");
     text.select();
     navigator.clipboard.writeText(text.value);
+    document.getSelection().removeAllRanges();                //After Copying, the selection made will be removed!
   }
 
   const onChangeHandler=(event)=>{
@@ -51,17 +52,17 @@ export default function TextForm(props) {
         <h2><marquee behavior="alternate" direction="left">{props.heading}</marquee></h2>
         <textarea className="form-control" value={text} style={{backgroundColor:props.mode==='dark'?'black':'white',color:props.mode==='dark'?'white':'black'}} onChange={onChangeHandler} id="box" rows="8"></textarea>
       </div>
-      <button className="btn btn-danger mx-2 my-4" onClick={onUPHandler}>Convert To UpperCase</button>
-      <button className="btn btn-danger mx-2 my-4" onClick={onLowHandler}>Convert To LowerCase</button>
-      <button className="btn btn-danger mx-2 my-4" onClick={onClearHandler}>Clear</button>
-      <button className="btn btn-danger mx-2 my-4" onClick={extraSpaceHandler}>Remove Extra Spaces</button>
-      <button className="btn btn-danger mx-2 my-4" onClick={copyHandler}>Copy Text</button>
+      <button disabled={text.length===0} className="btn btn-danger mx-2 my-4" onClick={onUPHandler}>Convert To UpperCase</button>
+      <button disabled={text.length===0} className="btn btn-danger mx-2 my-4" onClick={onLowHandler}>Convert To LowerCase</button>
+      <button disabled={text.length===0} className="btn btn-danger mx-2 my-4" onClick={onClearHandler}>Clear</button>
+      <button disabled={text.length===0} className="btn btn-danger mx-2 my-4" onClick={extraSpaceHandler}>Remove Extra Spaces</button>
+      <button disabled={text.length===0} className="btn btn-danger mx-2 my-4" onClick={copyHandler}>Copy Text</button>
     </div>
 
     <div className="container my-5" style={{color:props.mode==='dark'?'white':'black'}}>
       <h3>Text Summary</h3>
-      <p>{text.split(" ").length} Words and {text.length} Characters</p>
-      <p>Average Time To Read : {0.004*text.split(" ").length} minutes</p>
+      <p>{text.split(" ").filter((element)=>{return element.length!==0}).length} Words and {text.length} Characters</p>
+      <p>Average Time To Read : {0.004*text.split(" ").filter((element)=>{return element.length!==0}).length} minutes</p>
 
     <div className="txtphoto">
       <img src={photo} class="img-fluid" alt="..." />
