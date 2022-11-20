@@ -32,9 +32,9 @@ export default function TextForm(props) {
   }
 
   const copyHandler=()=>{
-    var text=document.getElementById("box");
-    text.select();
-    navigator.clipboard.writeText(text.value);
+    // var text=document.getElementById("box");              //Since we are using Navigator Api, we don't need to select or deselect
+    // text.select();
+    navigator.clipboard.writeText(text);
     document.getSelection().removeAllRanges();                //After Copying, the selection made will be removed!
   }
 
@@ -61,7 +61,7 @@ export default function TextForm(props) {
 
     <div className="container my-5" style={{color:props.mode==='dark'?'white':'black'}}>
       <h3>Text Summary</h3>
-      <p>{text.split(" ").filter((element)=>{return element.length!==0}).length} Words and {text.length} Characters</p>
+      <p>{text.split(/\s+/).filter((element)=>{return element.length!==0}).length} Words and {text.length} Characters</p>
       <p>Average Time To Read : {0.004*text.split(" ").filter((element)=>{return element.length!==0}).length} minutes</p>
 
     <div className="txtphoto">

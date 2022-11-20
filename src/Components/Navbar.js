@@ -14,7 +14,7 @@ export default function Navbar(props) {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
-              <Link className="nav-link active" aria-current="page" to="/" style={{color:props.mode==='dark'?'white':'black'}}>Home</Link>
+              <Link className="nav-link" aria-current="page" to="/" style={{color:props.mode==='dark'?'white':'black'}}>Home</Link>
             </li>
             <li className="nav-item">
               <Link className="nav-link" to="/about" style={{color:props.mode==='dark'?'white':'black'}}>{props.aboutText}</Link>
